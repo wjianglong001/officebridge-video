@@ -1,4 +1,4 @@
-vendor/
+vendor
 out/
 node_modules/
 footage/v?.mp4
