@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../theme.css"><script src="common.js"></script>
+<style>
+  :root { --tI: 9s; --tQ: 16.5s; --tF: 20.3s; }
+  .right { position: absolute; left: 840px; top: 0; width: 1000px; height: 1080px; }
+  .sum { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 26px;
+    animation: fadeOut .4s calc(var(--tF) - .4s) forwards; }
+  .hd { font-size: 40px; font-weight: 900; color: var(--muted); letter-spacing: 8px; animation: fadeUp .4s .2s both; }
+  .pt { width: 820px; display: flex; align-items: center; gap: 26px; padding: 24px 36px; font-size: 46px; font-weight: 900; }
+  .pt svg { width: 56px; height: 56px; flex: none; }
+  .pt.p1 { animation: slideInL .45s 1.4s both; }
+  .pt.p2 { animation: slideInL .45s 3.4s both; }
+  .pt.p3 { animation: slideInL .45s 6.0s both; }
+  .info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; width: 880px; margin-top: 10px; }
+  .info span { font-size: 32px; font-weight: 700; padding: 10px 24px; border-radius: 999px; border: 2px solid rgba(167,139,250,.55); background: rgba(167,139,250,.1); }
+  .info span:nth-child(1) { animation: popIn .4s var(--tI) both; border-color: #22c55e; background: rgba(34,197,94,.12); }
+  .info span:nth-child(2) { animation: popIn .4s calc(var(--tI) + 1.8s) both; }
+  .info span:nth-child(3) { animation: popIn .4s calc(var(--tI) + 4.6s) both; }
+  .q { font-size: 34px; font-weight: 700; color: var(--cyan); animation: fadeUp .4s var(--tQ) both; }
+
+  .follow { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .follow .logo { width: 170px; height: 170px; animation: popIn .6s var(--tF) both; filter: drop-shadow(0 0 26px rgba(34,211,238,.6)); }
+  .follow .nm { font-size: 92px; font-weight: 900; animation: fadeUp .5s calc(var(--tF) + .3s) both; }
+  .btn { font-size: 58px; font-weight: 900; padding: 22px 80px; border-radius: 999px; color: #fff;
+    background: linear-gradient(90deg, #fe2c55, #f472b6); box-shadow: 0 0 40px rgba(254,44,85,.55);
+    animation: popIn .5s calc(var(--tF) + .9s) both, beat 1.2s calc(var(--tF) + 1.6s) infinite; }
+  @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+  .next { font-size: 36px; color: var(--muted); font-weight: 700; animation: fadeUp .5s calc(var(--tF) + 2.2s) both; }
+</style></head>
+<body>
+<div class="right">
+  <div class="sum">
+    <div class="hd">总 结</div>
+    <div class="pt panel p1"><svg viewBox="0 0 48 48" fill="none" stroke="#22d3ee" stroke-width="3"><rect x="6" y="8" width="36" height="32" rx="4"/><path d="M6 18h36M6 28h36M20 8v32"/></svg>就在你的 WPS 表格里</div>
+    <div class="pt panel p2"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>选哪改哪，先预览再应用</div>
+    <div class="pt panel p3"><svg viewBox="0 0 48 48" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linejoin="round"><rect x="12" y="12" width="24" height="24" rx="4"/><path d="M18 6v6M30 6v6M18 36v6M30 36v6M6 18h6M6 30h6M36 18h6M36 30h6"/></svg>接你自己的 AI 工具</div>
+    <div class="info"><span>开源免费</span><span>支持 Windows 版 WPS 表格</span><span>Excel 版计划中</span></div>
+    <div class="q">有问题？评论区找师兄</div>
+  </div>
+  <div class="follow">
+    <svg class="logo" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><path d="M6 54 L32 10 L58 54 Z" stroke="url(#lg)" stroke-width="4.5" stroke-linejoin="round"/><path d="M24 54 L32 38 L40 54" stroke="url(#lg)" stroke-width="4" stroke-linejoin="round"/><path d="M2 54 H62" stroke="url(#lg)" stroke-width="4.5" stroke-linecap="round"/><circle cx="50" cy="16" r="3" fill="#22d3ee"/></svg>
+    <div class="nm grad-text">王师兄的AI营地</div>
+    <div class="btn">＋ 关注</div>
+    <div class="next">下期继续带你淘好用的开源项目</div>
+  </div>
+</div>
+</body></html>
