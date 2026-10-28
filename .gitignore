@@ -1,3 +1,6 @@
 vendor/
 out/
 node_modules/
+footage/v?.mp4
+*.env
+.env*

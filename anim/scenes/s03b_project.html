@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../theme.css"><script src="common.js"></script>
+<style>
+  /* 新版项目介绍：名字 → 桥 → 两个要点 → 四个例子预告。时间点由剪辑脚本按配音传入 */
+  :root { --tT: 2.5s; --tCN: 4.1s; --tB: 5.7s; --tN2: 10s; --tC: 13.5s; --tC2: 15.9s; --tD: 21s; }
+  .right { position: absolute; left: 820px; top: 0; width: 1040px; height: 1080px; }
+  .title { position: absolute; left: 0; right: 0; top: 360px; text-align: center;
+    animation: popIn .6s var(--tT) both, toTop .6s calc(var(--tB) - .3s) both; }
+  @keyframes toTop { to { transform: translateY(-250px) scale(.6); } }
+  .tag0 { font-size: 34px; font-weight: 700; color: var(--violet); letter-spacing: 6px; margin-bottom: 16px; }
+  .en { font-size: 128px; font-weight: 900; line-height: 1; letter-spacing: -2px; filter: drop-shadow(0 0 28px rgba(34,211,238,.4)); }
+  .cn { font-size: 56px; font-weight: 700; margin-top: 18px; letter-spacing: 12px; animation: fadeUp .45s var(--tCN) both; }
+
+  .bridge { position: absolute; left: 0; right: 0; top: 300px; height: 520px;
+    animation: fadeIn .5s var(--tB) both, fadeOut .4s calc(var(--tC) - .4s) forwards; }
+  .node { position: absolute; top: 190px; width: 300px; height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+  .node svg { width: 110px; height: 110px; }
+  .node span { font-size: 38px; font-weight: 900; text-align: center; line-height: 1.25; }
+  .n1 { left: 10px; animation: slideInL .5s calc(var(--tB) + .2s) both; }
+  .n2 { right: 10px; animation: popIn .5s var(--tN2) both; }
+  .arc { position: absolute; left: 0; top: 0; width: 1040px; height: 520px; }
+  .arc .deck { stroke-dasharray: 600; stroke-dashoffset: 600; animation: draw 1.2s calc(var(--tB) + .5s) forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .dot { position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 18px var(--cyan);
+    offset-path: path('M 320 320 Q 520 120 720 320'); offset-rotate: 0deg;
+    animation: flow 1.6s linear infinite, fadeIn .3s calc(var(--tN2) + .5s) both; }
+  .dot.d2 { animation-delay: -.53s, calc(var(--tN2) + .5s); }
+  .dot.d3 { animation-delay: -1.06s, calc(var(--tN2) + .5s); }
+  .dot.r { background: var(--violet); box-shadow: 0 0 18px var(--violet); offset-path: path('M 720 320 Q 520 120 320 320'); animation-delay: -.8s, calc(var(--tN2) + .5s); }
+  @keyframes flow { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+  .points { position: absolute; left: 0; right: 0; top: 400px; display: flex; flex-direction: column; gap: 30px; align-items: center;
+    animation: fadeOut .4s calc(var(--tD) - .4s) forwards; }
+  .pt { width: 860px; display: flex; align-items: center; gap: 28px; padding: 30px 40px; }
+  .pt svg { width: 72px; height: 72px; flex: none; }
+  .pt b { font-size: 50px; font-weight: 900; line-height: 1.3; }
+  .pt:nth-child(1) { animation: slideInL .5s var(--tC) both; }
+  .pt:nth-child(2) { animation: slideInL .5s var(--tC2) both, glowPulse 1.8s calc(var(--tC2) + .8s) infinite; border-color: rgba(34,211,238,.75); }
+  .apply { display: inline-block; padding: 0 18px; border-radius: 12px; background: var(--cyan); color: #0b1020; margin: 0 6px; }
+
+  .ex { position: absolute; left: 0; right: 0; top: 400px; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+  .ex .tt { font-size: 40px; font-weight: 900; color: var(--muted); letter-spacing: 6px; animation: fadeUp .4s var(--tD) both; }
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid4 div { width: 420px; padding: 26px 30px; font-size: 42px; font-weight: 900; display: flex; align-items: center; gap: 18px; }
+  .grid4 i { font-style: normal; font-size: 30px; color: var(--cyan); }
+  .grid4 div:nth-child(1) { animation: popIn .4s calc(var(--tD) + .3s) both; }
+  .grid4 div:nth-child(2) { animation: popIn .4s calc(var(--tD) + .55s) both; }
+  .grid4 div:nth-child(3) { animation: popIn .4s calc(var(--tD) + .8s) both; }
+  .grid4 div:nth-child(4) { animation: popIn .4s calc(var(--tD) + 1.05s) both; }
+</style></head>
+<body>
+<div class="right">
+  <div class="title">
+    <div class="tag0">我的开源项目</div>
+    <div class="en grad-text">OfficeBridge</div>
+    <div class="cn">办 公 桥</div>
+  </div>
+
+  <div class="bridge">
+    <svg class="arc" viewBox="0 0 1040 520" fill="none">
+      <defs><linearGradient id="bg1" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+      <path class="deck" d="M 320 320 Q 520 120 720 320" stroke="url(#bg1)" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+    <div class="dot"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot r"></div>
+    <div class="node n1 panel">
+      <svg viewBox="0 0 48 48" fill="none" stroke="#22d3ee" stroke-width="3"><rect x="6" y="8" width="36" height="32" rx="4"/><path d="M6 18h36M6 28h36M20 8v32"/></svg>
+      <span>你的<br>WPS 表格</span>
+    </div>
+    <div class="node n2 panel">
+      <svg viewBox="0 0 48 48" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linejoin="round"><rect x="12" y="12" width="24" height="24" rx="4"/><path d="M18 6v6M30 6v6M18 36v6M30 36v6M6 18h6M6 30h6M36 18h6M36 30h6"/><path d="M20 28l4-8 4 8M21.5 25h5"/></svg>
+      <span>电脑上已装好的<br>AI 工具</span>
+    </div>
+  </div>
+
+  <div class="points">
+    <div class="pt panel"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6M4 4v6M20 20h-6M20 20v-6M20 4h-6M20 4v6M4 20h6M4 20v-6"/><circle cx="12" cy="12" r="2.5"/></svg><b>你选中哪里<br>AI 就看到哪里</b></div>
+    <div class="pt panel"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>先看修改方案<br>点<span class="apply">应用</span>才真的改</b></div>
+  </div>
+
+  <div class="ex">
+    <div class="tt">四个例子</div>
+    <div class="grid4">
+      <div class="panel"><i>01</i>选哪改哪</div>
+      <div class="panel"><i>02</i>多步自动接力</div>
+      <div class="panel"><i>03</i>多表联合分析</div>
+      <div class="panel"><i>04</i>切换 AI 工具</div>
+    </div>
+  </div>
+</div>
+</body></html>

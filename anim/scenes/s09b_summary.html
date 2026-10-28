@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../theme.css"><script src="common.js"></script>
+<style>
+  /* 新版结尾：总结 → 开源信息 → 个人介绍 → 关注。时间点由剪辑脚本按配音传入 */
+  :root { --tP1: 1.1s; --tP2: 4.1s; --tP3: 6.7s; --tI1: 9.3s; --tI2: 11.2s; --tI3: 14.7s; --tMe: 17s; --tShare: 20.5s; --tQ: 26.5s; --tF: 29.6s; --tBye: 31.7s; }
+  .right { position: absolute; left: 840px; top: 0; width: 1000px; height: 1080px; }
+  .sum { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 26px;
+    animation: fadeOut .4s calc(var(--tMe) - .4s) forwards; }
+  .hd { font-size: 40px; font-weight: 900; color: var(--muted); letter-spacing: 8px; animation: fadeUp .4s .2s both; }
+  .pt { width: 820px; display: flex; align-items: center; gap: 26px; padding: 24px 36px; font-size: 46px; font-weight: 900; }
+  .pt svg { width: 56px; height: 56px; flex: none; }
+  .p1 { animation: slideInL .45s var(--tP1) both; }
+  .p2 { animation: slideInL .45s var(--tP2) both; }
+  .p3 { animation: slideInL .45s var(--tP3) both; }
+  .info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; width: 880px; margin-top: 10px; }
+  .info span { font-size: 32px; font-weight: 700; padding: 10px 24px; border-radius: 999px; border: 2px solid rgba(167,139,250,.55); background: rgba(167,139,250,.1); }
+  .i1 { animation: popIn .4s var(--tI1) both; border-color: #22c55e !important; background: rgba(34,197,94,.12) !important; }
+  .i2 { animation: popIn .4s var(--tI2) both; }
+  .i3 { animation: popIn .4s var(--tI3) both; }
+
+  .me { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 34px;
+    animation: fadeOut .4s calc(var(--tF) - .4s) forwards; }
+  .meid { display: flex; align-items: center; gap: 28px; animation: popIn .5s var(--tMe) both; }
+  .meid .logo { width: 120px; height: 120px; }
+  .meid .nm { font-size: 100px; font-weight: 900; line-height: 1; }
+  .path { display: flex; align-items: center; gap: 24px; animation: fadeUp .45s calc(var(--tMe) + .5s) both; }
+  .step { font-size: 40px; font-weight: 700; padding: 16px 30px; }
+  .path svg { width: 64px; }
+  .path .s2 { border-color: rgba(34,211,238,.7); box-shadow: 0 0 24px rgba(34,211,238,.35); }
+  .share { display: flex; gap: 24px; animation: fadeUp .45s var(--tShare) both; }
+  .share div { font-size: 38px; font-weight: 700; padding: 18px 30px; display: flex; align-items: center; gap: 14px; }
+  .share svg { width: 42px; height: 42px; }
+  .q { font-size: 36px; font-weight: 700; color: var(--cyan); animation: fadeUp .4s var(--tQ) both; }
+
+  .follow { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+  .follow .logo { width: 170px; height: 170px; animation: popIn .6s var(--tF) both; filter: drop-shadow(0 0 26px rgba(34,211,238,.6)); }
+  .follow .nm2 { font-size: 92px; font-weight: 900; animation: fadeUp .5s calc(var(--tF) + .3s) both; }
+  .btn { font-size: 58px; font-weight: 900; padding: 22px 80px; border-radius: 999px; color: #fff;
+    background: linear-gradient(90deg, #fe2c55, #f472b6); box-shadow: 0 0 40px rgba(254,44,85,.55);
+    animation: popIn .5s calc(var(--tF) + .7s) both, beat 1.2s calc(var(--tF) + 1.3s) infinite; }
+  @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+  .bye { font-size: 40px; color: var(--muted); font-weight: 700; animation: fadeUp .5s var(--tBye) both; }
+</style></head>
+<body>
+<div class="right">
+  <div class="sum">
+    <div class="hd">总 结</div>
+    <div class="pt panel p1"><svg viewBox="0 0 48 48" fill="none" stroke="#22d3ee" stroke-width="3"><rect x="6" y="8" width="36" height="32" rx="4"/><path d="M6 18h36M6 28h36M20 8v32"/></svg>就在你的 WPS 表格里</div>
+    <div class="pt panel p2"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>选哪改哪，先预览再应用</div>
+    <div class="pt panel p3"><svg viewBox="0 0 48 48" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linejoin="round"><rect x="12" y="12" width="24" height="24" rx="4"/><path d="M18 6v6M30 6v6M18 36v6M30 36v6M6 18h6M6 30h6M36 18h6M36 30h6"/></svg>接你自己的 AI 工具</div>
+    <div class="info"><span class="i1">开源免费</span><span class="i2">支持 Windows 版 WPS 表格</span><span class="i3">Excel 版计划中</span></div>
+  </div>
+
+  <div class="me">
+    <div class="meid">
+      <svg class="logo" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><path d="M6 54 L32 10 L58 54 Z" stroke="url(#lg1)" stroke-width="4.5" stroke-linejoin="round"/><path d="M24 54 L32 38 L40 54" stroke="url(#lg1)" stroke-width="4" stroke-linejoin="round"/><path d="M2 54 H62" stroke="url(#lg1)" stroke-width="4.5" stroke-linecap="round"/><circle cx="50" cy="16" r="3" fill="#22d3ee"/></svg>
+      <div class="nm grad-text">王师兄</div>
+    </div>
+    <div class="path">
+      <div class="step panel">五年后端开发</div>
+      <svg viewBox="0 0 48 24" fill="none" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h42M34 3l10 9-10 9"/></svg>
+      <div class="step panel s2">专心做 AI 开发</div>
+    </div>
+    <div class="share">
+      <div class="panel"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>自己写的开源项目</div>
+      <div class="panel"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>好用的开源宝贝</div>
+    </div>
+    <div class="q">用的时候有问题？评论区找我</div>
+  </div>
+
+  <div class="follow">
+    <svg class="logo" viewBox="0 0 64 64" fill="none"><defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs><path d="M6 54 L32 10 L58 54 Z" stroke="url(#lg2)" stroke-width="4.5" stroke-linejoin="round"/><path d="M24 54 L32 38 L40 54" stroke="url(#lg2)" stroke-width="4" stroke-linejoin="round"/><path d="M2 54 H62" stroke="url(#lg2)" stroke-width="4.5" stroke-linecap="round"/><circle cx="50" cy="16" r="3" fill="#22d3ee"/></svg>
+    <div class="nm2 grad-text">王师兄的AI营地</div>
+    <div class="btn">＋ 关注</div>
+    <div class="bye">我们下期见</div>
+  </div>
+</div>
+</body></html>
