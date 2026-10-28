@@ -56,7 +56,7 @@
 
 ## 下一步
 
-1. 用 MiniMax 接口生成配音：读取环境变量 `MINIMAX_API_KEY`、`MINIMAX_VOICE_ID`（国内版接口，先查 platform.minimaxi.com 上的语音合成文档确认参数，不要凭记忆）。如果接口能返回字幕或时间戳，一并保存，用来对齐画面和字幕
+1. 用 MiniMax 接口生成配音：读取环境变量 `MINIMAX_API_BASE_URL`（用户的是 https://api.minimax.cn）、`MINIMAX_TTS_API_KEY`（语音合成专用 key）、`MINIMAX_VOICE_ID`（复刻音色 ID）。先查 MiniMax 官方语音合成文档确认接口路径和参数，不要凭记忆。绝不能把 key 写进任何文件或提交到仓库。如果接口能返回字幕或时间戳，一并保存，用来对齐画面和字幕
 2. 把配音发给用户试听，重点听 OfficeBridge、WorkBuddy、Codex 的读音
 3. 用户确认后：用户拿配音去 HeyGen 生成数字人（720p、横屏、绿幕），切成小于 25MB 的几段传到本仓库
 4. 按配音里每句话的时间点调整动画时间参数并重新导出，剪辑演示段（等待部分调速去对口播），加字幕，合成成片
