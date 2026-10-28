@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../theme.css"><script src="common.js"></script>
+<style>
+  /* 三个 AI 工具依次点亮，画布 1300x340；时间点跟录屏连接成功的时刻对齐 */
+  :root { --t1: .4s; --t2: 4s; --t3: 6.5s; --t4: 8.5s; --tOut: 11.5s; }
+  body { display: flex; align-items: center; justify-content: center; }
+  .wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 30px 50px;
+    animation: fadeUp .5s .05s both, fadeOut .4s var(--tOut) forwards; }
+  .tt { font-size: 34px; font-weight: 900; color: var(--muted); letter-spacing: 4px; }
+  .chips { display: flex; gap: 30px; }
+  .chip { position: relative; width: 330px; padding: 22px 0; text-align: center; font-size: 46px; font-weight: 900; border-radius: 18px;
+    background: rgba(13,20,44,.85); border: 2px solid rgba(148,163,200,.25); color: #5b6585; }
+  .chip.c1 { animation: lit .5s var(--t1) both; }
+  .chip.c2 { animation: lit .5s var(--t2) both; }
+  .chip.c3 { animation: lit .5s var(--t3) both; }
+  @keyframes lit { to { color: var(--text); border-color: var(--cyan); box-shadow: 0 0 30px rgba(34,211,238,.5); background: rgba(34,211,238,.1); } }
+  .chip .dot { position: absolute; top: 14px; right: 16px; width: 16px; height: 16px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 12px #22c55e; opacity: 0; }
+  .c1 .dot { animation: fadeIn .2s calc(var(--t1) + .3s) both; }
+  .c2 .dot { animation: fadeIn .2s calc(var(--t2) + .3s) both; }
+  .c3 .dot { animation: fadeIn .2s calc(var(--t3) + .3s) both; }
+  .note { font-size: 34px; font-weight: 700; color: var(--cyan); animation: fadeUp .4s var(--t4) both; }
+</style></head>
+<body>
+  <div class="wrap panel">
+    <div class="tt">用你自己的 AI 工具</div>
+    <div class="chips">
+      <div class="chip c1">Codex<i class="dot"></i></div>
+      <div class="chip c2">WorkBuddy<i class="dot"></i></div>
+      <div class="chip c3">豆包<i class="dot"></i></div>
+    </div>
+    <div class="note">用已登录的账号，不用另外配置</div>
+  </div>
+</body></html>

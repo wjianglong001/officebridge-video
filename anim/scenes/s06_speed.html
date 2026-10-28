@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../theme.css"><script src="common.js"></script>
+<style>
+  /* 加速提示，画布 420x100，2 秒一循环 */
+  body { display: flex; align-items: center; justify-content: center; }
+  .tag { display: flex; align-items: center; gap: 12px; padding: 12px 26px; border-radius: 14px; background: rgba(7,11,24,.85);
+    border: 2px solid rgba(167,139,250,.7); font-size: 34px; font-weight: 900; }
+  .tag svg { width: 46px; height: 30px; }
+  .tag path { animation: blink 1s linear infinite; }
+  .tag path:nth-child(2) { animation-delay: -.5s; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+</style></head>
+<body>
+  <div class="tag">
+    <svg viewBox="0 0 46 30" fill="#a78bfa"><path d="M2 2l18 13L2 28z"/><path d="M24 2l18 13-18 13z"/></svg>
+    <span data-q="text">快进中</span>
+  </div>
+</body></html>

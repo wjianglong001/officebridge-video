@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../theme.css">
+<style>
+  .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.55; }
+  .o1 { width: 620px; height: 620px; left: 1100px; top: 80px; background: rgba(59,130,246,.45); animation: drift1 20s ease-in-out infinite; }
+  .o2 { width: 520px; height: 520px; left: 1300px; top: 560px; background: rgba(167,139,250,.40); animation: drift2 20s ease-in-out infinite; }
+  .stage { position: absolute; left: 90px; bottom: -120px; width: 700px; height: 300px; border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(34,211,238,.35), transparent 65%); }
+  .ring { position: absolute; left: 190px; bottom: 40px; width: 500px; height: 70px; border-radius: 50%;
+    border: 2px solid rgba(34,211,238,.45); box-shadow: 0 0 30px rgba(34,211,238,.4); }
+  @keyframes drift1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-120px, 80px); } }
+  @keyframes drift2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(100px, -90px); } }
+</style></head>
+<body class="opaque">
+  <div class="grid-bg"></div>
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="stage"></div><div class="ring"></div>
+</body></html>
